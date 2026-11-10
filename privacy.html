@@ -14,27 +14,36 @@
 <p><em>Last updated: 10 November 2026</em></p>
 
 <h2>What StoryBot is</h2>
-<p>StoryBot is a personal tool run by a single YouTube channel owner on their own computer. It generates short story videos and uploads them to that owner's channel. It has no other users.</p>
+<p>StoryBot is a personal tool run by a single creator on their own computer. It generates short story videos and publishes them to that creator's own YouTube, Instagram and TikTok accounts. It has no other users and offers no accounts to the public.</p>
 
-<h2>Google data it accesses</h2>
-<p>StoryBot requests one permission: <code>youtube.upload</code>, which lets it upload videos to the signed-in channel. It does not request or read your profile, email, contacts, watch history, comments, or any other YouTube or Google data.</p>
+<h2>Data it accesses</h2>
+<ul>
+  <li><strong>YouTube (Google):</strong> <code>youtube.upload</code> to upload videos; <code>youtube.readonly</code> to read the channel's name and its own videos' view counts; <code>youtube.force-ssl</code> to add its own videos to its own playlists and post the channel's comment on its own videos. It does not read email, contacts, watch history or other users' data.</li>
+  <li><strong>Instagram (Meta):</strong> <code>instagram_business_basic</code> to read the connected account's username and ID, and <code>instagram_business_content_publish</code> to publish Reels to that account.</li>
+  <li><strong>TikTok:</strong> <code>user.info.basic</code> to read the connected account's display name, and <code>video.upload</code> to send videos to that account's TikTok inbox as drafts.</li>
+</ul>
 
 <h2>How that data is used and stored</h2>
 <ul>
-  <li>The sign-in token Google issues is stored only in a local file on the owner's computer and is used only to upload the day's video.</li>
-  <li>No Google user data is sent to any server operated by StoryBot. StoryBot has no server.</li>
-  <li>No Google user data is sold, shared with third parties, or used for advertising.</li>
+  <li>Sign-in tokens are stored only in local files on the creator's computer and are used only to publish the creator's own videos and read their performance.</li>
+  <li>StoryBot has no server. No user data is sent to any server operated by StoryBot. The sign-in page on this website only passes the sign-in result straight back to the creator's own computer and stores nothing.</li>
+  <li>No data is sold, shared with third parties, or used for advertising.</li>
 </ul>
 
 <h2>Other services</h2>
-<p>Story text is generated with the Claude API by Anthropic, and narration is generated with Microsoft's text-to-speech voices. Neither service receives any Google user data.</p>
+<p>Story text and illustrations are generated with the Claude API by Anthropic, and narration is generated with Microsoft's text-to-speech voices. Neither service receives any data from YouTube, Instagram or TikTok.</p>
 
-<h2>Revoking access</h2>
-<p>Access can be removed at any time from <a href="https://myaccount.google.com/permissions">your Google Account's third-party connections page</a>. Deleting the local token file also stops all access.</p>
+<h2>Revoking access and deleting data</h2>
+<ul>
+  <li>Google: remove StoryBot at <a href="https://myaccount.google.com/permissions">your Google Account's third-party connections page</a>.</li>
+  <li>Instagram: Settings &rarr; Website permissions &rarr; Apps and websites, then remove StoryBot.</li>
+  <li>TikTok: Settings and privacy &rarr; Security &rarr; Apps and services permissions, then remove StoryBot.</li>
+  <li>Deleting the local token files (token.json, instagram.json, tiktok.json) removes all stored data. To ask for deletion, contact the channel through its YouTube About page; requests are handled within 30 days.</li>
+</ul>
 
 <h2>Compliance</h2>
-<p>StoryBot's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. It uses YouTube API Services and is subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+<p>StoryBot's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. It uses YouTube API Services and is subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. Its use of Instagram and TikTok follows the <a href="https://developers.facebook.com/terms/">Meta Platform Terms</a> and the <a href="https://www.tiktok.com/legal/page/global/tik-tok-developer-terms-of-service/en">TikTok Developer Terms of Service</a>.</p>
 
-<p><a href="index.html">Back to StoryBot</a></p>
+<p><a href="terms.html">Terms of service</a> · <a href="index.html">Back to StoryBot</a></p>
 </body>
 </html>

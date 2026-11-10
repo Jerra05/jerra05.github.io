@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>StoryBot sign-in</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 520px; margin: 60px auto; padding: 0 16px; line-height: 1.6; color: #222; background: #fff; }
+</style>
+</head>
+<body>
+<h1>Finishing sign-in…</h1>
+<p id="msg">Passing the sign-in back to StoryBot on your computer.</p>
+<script>
+  // Instagram and TikTok only return to https addresses. This page hands the result straight
+  // to the StoryBot program waiting on this same computer (127.0.0.1). Nothing is stored or sent elsewhere.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var state = q.get("state") || "";
+    var port = state.split(".")[0];
+    if (/^\d{4,5}$/.test(port)) {
+      location.replace("http://127.0.0.1:" + port + "/callback" + location.search);
+    } else {
+      document.getElementById("msg").textContent =
+        "This page is only used while connecting StoryBot. Start the connection from StoryBot again.";
+    }
+  })();
+</script>
+</body>
+</html>
